@@ -68,44 +68,37 @@ $('.owl-two').owlCarousel({
 
 
 $(document).ready(function () {
-//    var myDate = new Date();
-//    myDate.setDate(myDate.getDate() + 10);
-// Set the date we're counting down to
-var countDownDate = new Date();
-countDownDate.setHours(countDownDate.getHours() + 1);
-countDownDate = countDownDate.getTime()
 
-// // Update the count down every 1 second
- var x = setInterval(function () {
+    <p id="timer"></p>
+    //    var myDate = new Date();
+    //    myDate.setDate(myDate.getDate() + 10);
+    // Set the date we're counting down to
+    var countDownDate = new Date();
+    countDownDate.setHours(countDownDate.getHours() + 1);
+    countDownDate = countDownDate.getTime()
 
-//     // Get today's date and time
-     var now =  Date.now();
+    // // Update the count down every 1 second
+    var x = setInterval(function () {
 
-//     // Find the distance between now and the count down date
-     var distance = countDownDate - now;
+        //     // Get today's date and time
+        var now = Date.now();
 
-//     // Time calculations for days, hours, minutes and seconds
-     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        //     // Find the distance between now and the count down date
+        var distance = countDownDate - now;
 
-     $(".sale-timer__hours").prepend(hours);
-     $(".sale-timer__minutes").prepend(minutes);
-     $(".sale-timer__seconds").prepend(seconds);
+        //     // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+        document.getElementById("demo").innerHTML = hours + "h "
+            + minutes + "m " + seconds + "s ";
 
-    $("#countdown").countdown(distance, function (event) {
-        $(this).html(
-            event.strftime(
-                '<div class="col-3"> <div class="time text-slate-dark">%D</div> <span class="text text-slate">Days</span> </div> <div class="col-3"> <div class="time text-slate-dark">%H</div><span class="text text-slate">Hours</span> </div> <div class="col-3"> <div class="time text-slate-dark">%M</div><span class="text text-slate">Minutes</span> </div> <div class="col-3"> <div class="time text-slate-dark">%S</div><span class="text text-slate">Seconds</span> </div>'
-            )
-        );
-    });
-//     // If the count down is over, write some text 
-if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdownSale").innerHTML = "DELIVERED";
-}
-}, 1000);
+        //     // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "DELIVERED";
+        }
+    }, 1000);
 });
