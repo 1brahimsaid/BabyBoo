@@ -70,15 +70,6 @@ $('.owl-two').owlCarousel({
 $(document).ready(function () {
 //    var myDate = new Date();
 //    myDate.setDate(myDate.getDate() + 10);
-    $("#countdown").countdown(myDate, function (event) {
-        $(this).html(
-            event.strftime(
-                '<div class="col-3"> <div class="time text-slate-dark">%D</div> <span class="text text-slate">Days</span> </div> <div class="col-3"> <div class="time text-slate-dark">%H</div><span class="text text-slate">Hours</span> </div> <div class="col-3"> <div class="time text-slate-dark">%M</div><span class="text text-slate">Minutes</span> </div> <div class="col-3"> <div class="time text-slate-dark">%S</div><span class="text text-slate">Seconds</span> </div>'
-            )
-        );
-    });
-
-});
 // Set the date we're counting down to
 var countDownDate = new Date();
 countDownDate.setHours(countDownDate.getHours() + 1);
@@ -109,3 +100,12 @@ countDownDate = countDownDate.getTime()
          document.getElementById("countdownSale").innerHTML = "DELIVERED";
      }
  }, 1000);
+    $("#countdown").countdown(myDate, function (event) {
+        $(this).html(
+            event.strftime(
+                '<div class="col-3"> <div class="time text-slate-dark">%D</div> <span class="text text-slate">Days</span> </div> <div class="col-3"> <div class="time text-slate-dark">%H</div><span class="text text-slate">Hours</span> </div> <div class="col-3"> <div class="time text-slate-dark">%M</div><span class="text text-slate">Minutes</span> </div> <div class="col-3"> <div class="time text-slate-dark">%S</div><span class="text text-slate">Seconds</span> </div>'
+            )
+        );
+    });
+
+});
