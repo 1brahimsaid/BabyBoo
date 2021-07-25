@@ -80,7 +80,6 @@ $(document).ready(function () {
 
 });
 
-
 // Set the date we're counting down to
 // var countDownDate = new Date();
 // countDownDate.setDate(countDownDate.getDate() + 10);
