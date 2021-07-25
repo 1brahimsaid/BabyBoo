@@ -66,19 +66,19 @@ $('.owl-two').owlCarousel({
 })
 
 
-$(document).ready(function () {
+//$(document).ready(function () {
 
-    var myDate = new Date();
-    myDate.setHours(myDate.getHours() + 1);
-    $("#countdown").countdown(myDate, function (event) {
-        $(this).html(
-            event.strftime(
-                '<div class="col-3"> <div class="time text-slate-dark">%H</div><span class="text text-slate">Hours</span> </div> <div class="col-3"> <div class="time text-slate-dark">%M</div><span class="text text-slate">Minutes</span> </div> <div class="col-3"> <div class="time text-slate-dark">%S</div><span class="text text-slate">Seconds</span> </div>'
-            )
-        );
-    });
-
-});
+//    var myDate = new Date();
+//    myDate.setHours(myDate.getHours() + 1);
+//    $("#countdown").countdown(myDate, function (event) {
+//        $(this).html(
+//            event.strftime(
+//                '<div class="col-3"> <div class="time text-slate-dark">%H</div><span class="text text-slate">Hours</span> </div> <div class="col-3"> <div class="time text-slate-dark">%M</div><span class="text text-slate">Minutes</span> </div> <div class="col-3"> <div class="time text-slate-dark">%S</div><span class="text text-slate">Seconds</span> </div>'
+//            )
+//        );
+//    });
+//
+// });
 
 // Set the date we're counting down to
 // var countDownDate = new Date();
