@@ -94,18 +94,18 @@ countDownDate = countDownDate.getTime()
      $(".sale-timer__minutes").prepend(minutes);
      $(".sale-timer__seconds").prepend(seconds);
 
-//     // If the count down is over, write some text 
-     if (distance < 0) {
-         clearInterval(x);
-         document.getElementById("countdownSale").innerHTML = "DELIVERED";
-     }
- }, 1000);
-    $("#countdown").countdown(distance, function (event) {
+
+    $("#countdown").countdown(countDownDate, function (event) {
         $(this).html(
             event.strftime(
                 '<div class="col-3"> <div class="time text-slate-dark">%D</div> <span class="text text-slate">Days</span> </div> <div class="col-3"> <div class="time text-slate-dark">%H</div><span class="text text-slate">Hours</span> </div> <div class="col-3"> <div class="time text-slate-dark">%M</div><span class="text text-slate">Minutes</span> </div> <div class="col-3"> <div class="time text-slate-dark">%S</div><span class="text text-slate">Seconds</span> </div>'
             )
         );
     });
-
+//     // If the count down is over, write some text 
+if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdownSale").innerHTML = "DELIVERED";
+}
+}, 1000);
 });
