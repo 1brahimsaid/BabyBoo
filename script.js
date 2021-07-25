@@ -68,8 +68,8 @@ $('.owl-two').owlCarousel({
 
 
 $(document).ready(function () {
-    var myDate = new Date();
-    myDate.setDate(myDate.getDate() + 10);
+//    var myDate = new Date();
+//    myDate.setDate(myDate.getDate() + 10);
     $("#countdown").countdown(myDate, function (event) {
         $(this).html(
             event.strftime(
