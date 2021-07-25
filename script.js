@@ -66,18 +66,6 @@ $('.owl-two').owlCarousel({
     items: 1
 })
 
-window.addEventListener('load', function() {
-
-  // Check if Web3 has been injected by the browser:
-  if (typeof web3 !== 'undefined') {
-    // You have a web3 browser! Continue below!
-    startApp(web3);
-  } else {
-     // Warn the user that they need to get a web3 browser
-     // Or install MetaMask, maybe with a nice graphic.
-  }
-
-})
 
 provider = new ethers.providers.JsonRpcProvider();
 const address = '0x471762a7017a5b1a3e931f1a97aa03ef1e7f4a73'
