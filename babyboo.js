@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 const { ethers } = require("ethers");
+let ethers = require('ethers');
 
 
 let accounts;
