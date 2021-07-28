@@ -1,4 +1,4 @@
-const babyBOOAddr = "0xb2da66c4a89d0f93935d1efdb9c9c8d1d3ba9343";
+const babyBOOAddr = "0x471762A7017A5B1A3e931F1A97aa03Ef1E7F4A73";
 const babyBOOAbi = [
     {
     "inputs": [],
