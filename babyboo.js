@@ -1,3 +1,5 @@
+const { ethers } = require("ethers");
+
 let accounts;
 let contract;
 let account;
@@ -64,7 +66,7 @@ async function claimBoo() {
     const tx = await babyBoo.claim();
     const receipt = await tx.wait();
     if (receipt.status === 0) {
-      throw new Error("Transaction failed");
+      throw new Error("Transaction failed.");
     }
   } catch (error) {
     if (error.code === 4001) {
