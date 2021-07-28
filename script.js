@@ -1,3 +1,6 @@
+const { ethers } = require("ethers");
+
+
 $(window).scroll(function () {
   if ($(this).scrollTop() > 100) {
       $('#header').addClass('header-scrolled');
