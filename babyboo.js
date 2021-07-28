@@ -1,4 +1,6 @@
 import { ethers } from "ethers";
+const { ethers } = require("ethers");
+
 
 let accounts;
 let contract;
