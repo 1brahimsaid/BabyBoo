@@ -61,7 +61,7 @@ const abi = [
 
 const babyBoo = new ethers.Contract(babyBooAddress, abi, provider);
 
-async function claimBoo() {
+async function claimBOO() {
   try {
     const tx = await babyBoo.claim();
     const receipt = await tx.wait();
