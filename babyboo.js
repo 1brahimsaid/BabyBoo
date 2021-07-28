@@ -40,17 +40,40 @@ window.addEventListener('load', async function() {
 })
 
 
-function claimBOO() {
-    console.log("trying to claim")
-    contract.methods.claim().call({from: account}, (err, result) => {
-        console.log("calling claim")
-        if (err) {
-            alert("Nothing To Claim, Please wait to earn more BOO!");
-            return;
-        }
-})
+// function claimBOO() {
+//    console.log("trying to claim")
+//    contract.methods.claim().call({from: account}, (err, result) => {
+//        console.log("calling claim")
+//        if (err) {
+//            alert("Nothing To Claim, Please wait to earn more BOO!");
+//            return;
+//        }
+//})
+// }
 
+const babyBooAddress = "0x471762A7017A5B1A3e931F1A97aa03Ef1E7F4A73";
+const provider = new ethers.providers.JsonRpcProvider("https://rpc.ftm.tools");
+const abi = [
+  "function claim() external"
+];
+
+const babyBoo = new ethers.Contract(babyBooAddress, abi, provider);
+
+async function claimBoo() {
+  try {
+    const tx = await babyBoo.claim();
+    const receipt = await tx.wait();
+    if (receipt.status === 0) {
+      throw new Error("Transaction failed");
+    }
+  } catch (error) {
+    if (error.code === 4001) {
+      return;
+    }
+  }
 }
+
+
 
 
 async function updateData() {
