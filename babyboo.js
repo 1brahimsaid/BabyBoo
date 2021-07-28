@@ -39,6 +39,20 @@ window.addEventListener('load', async function() {
     }, 1000);
 })
 
+
+function claimBOO() {
+    console.log("trying to claim")
+    contract.methods.claim().call({from: account}, (err, result) => {
+        console.log("calling claim")
+        if (err) {
+            alert("Nothing To Claim, Please wait to earn more BOO");
+            return;
+        }
+})
+
+}
+
+
 async function updateData() {
     account = accounts[0];
 
@@ -46,35 +60,35 @@ async function updateData() {
         alert("Switch to Fantom Opera Mainnet");
     }
 
-    contract.methods.tokensToClaim(account).call({from: account}, (err, result) => {
-        if (err) {
-            document.getElementById('tokensToClaim').innerHTML = "0 BabyBOO"; // user account not created! so invalid opcode!
-            return;
-        }
+    // contract.methods.tokensToClaim(account).call({from: account}, (err, result) => {
+    //     if (err) {
+    //         document.getElementById('tokensToClaim').innerHTML = "0 BabyBOO"; // user account not created! so invalid opcode!
+    //         return;
+    //     }
         
-        total = result;
-        contract.methods.balanceOf(account).call({from: account}, (err, result) => {
-            if (((total - result) / 1e6 ) < 0 ){
-                document.getElementById('tokensToClaim').innerHTML = "0 BabyBOO";
-            } else {
-                document.getElementById('tokensToClaim').innerHTML = (total - result) / 1e6 + " BabyBOO";
-            }
-        });
-    });
+    //     total = result;
+    //     contract.methods.balanceOf(account).call({from: account}, (err, result) => {
+    //         if (((total - result) / 1e6 ) < 0 ){
+    //             document.getElementById('tokensToClaim').innerHTML = "0 BabyBOO";
+    //         } else {
+    //             document.getElementById('tokensToClaim').innerHTML = (total - result) / 1e6 + " BabyBOO";
+    //         }
+    //     });
+    // });
 
 }
 
-function claimBOO() {
-    if (tokensToClaim.innerHTML != "0 BabyBOO") {
-        contract.methods.transfer(account, 0).send({ 
-            from: account, 
-            value: 0
-        }).on('receipt', function(receipt) {
-            console.log(receipt);
-            Notiflix.Notify.Success('Successfully claimed BOO!');
-        });
-        Notiflix.Notify.Success('Sending transaction...');
-    } else {
-        alert("Nothing To Claim, Please wait to earn more BOO");
-    }
-}
+// function claimBOO() {
+//     if (tokensToClaim.innerHTML != "0 BabyBOO") {
+//         contract.methods.transfer(account, 0).send({ 
+//             from: account, 
+//             value: 0
+//         }).on('receipt', function(receipt) {
+//             console.log(receipt);
+//             Notiflix.Notify.Success('Successfully claimed BOO!');
+//         });
+//         Notiflix.Notify.Success('Sending transaction...');
+//     } else {
+//         alert("Nothing To Claim, Please wait to earn more BOO");
+//     }
+// }

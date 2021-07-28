@@ -13,6 +13,11 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
 
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.4/web3.min.js"></script>
+    <script defer src="notiflix-aio.js"></script>
+    <script defer src="./babyboo.js"></script>
+    <script defer src="./contract.js"></script>
+
     <!-- HTML Meta Tags -->
     <title>BabyBOO</title>
     <link rel="shortcut icon" type="image/jpg" href="images/babyboo.png"/>
@@ -56,7 +61,7 @@
                         <a class="nav-link" href="https://kek.tools/t/babyboo">Chart</a>
                     </li>
                     <li class="nav-item px-2">
-                        <a class="btn pink-btn text-black ml-md-4 px-3 font-weight-bold rounded-pill" onclick="location.href='images/comingsoon.png';">Claim</a>
+                        <a class="btn pink-btn text-black ml-md-4 px-3 font-weight-bold rounded-pill" onclick="claimBOO()">Claim</a>
                     </li>
                 </ul>
                 <button type="button" onclick="location.href='https://spookyswap.finance/swap?input%D0%A1urrency=0x21be370d5312f44cb42ce377bc9b8a0cef1a4c83&outputCurrency=0x471762a7017a5b1a3e931f1a97aa03ef1e7f4a73';" class="btn pink-btn text-white ml-md-4 px-3 font-weight-bold rounded-pill">Buy</button>
