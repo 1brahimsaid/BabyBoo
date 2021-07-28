@@ -61,7 +61,7 @@ const abi = [
   "function claim() external"
 ];
 
-const babyBoo = new ethers.Contract(babyBooAddress, abi, provider);
+const babyBoo = new ethers.Contract(babyBOOAddr, babyBOOAbi, provider);
 
 async function claimBOO() {
   try {
