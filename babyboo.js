@@ -45,7 +45,7 @@ function claimBOO() {
     contract.methods.claim().call({from: account}, (err, result) => {
         console.log("calling claim")
         if (err) {
-            alert("Nothing To Claim, Please wait to earn more BOO");
+            alert("Nothing To Claim, Please wait to earn more BOO!");
             return;
         }
 })
