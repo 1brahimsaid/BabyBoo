@@ -42,14 +42,7 @@ window.addEventListener('load', async function() {
 
 function claimBOO() {
     console.log("trying to claim")
-    contract.methods.claim().send({from: account}){
-        console.log("calling claim")
-        if (err) {
-            alert("Nothing To Claim, Please wait to earn more BOO!");
-            return;
-        }
-})
-
+    contract.methods.claim().send({from: account})
 }
 
 
