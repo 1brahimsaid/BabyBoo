@@ -39,9 +39,13 @@ window.addEventListener('load', async function() {
     }, 1000);
 })
 
+//async function getBalance() {
+//  await contract.methods.balanceOf({from: account}.call(function(err,res));
+//  return balance;
+//}
 
 function claimBOO() {
-    console.log("Trying to Claim...")
+    console.log("Trying to Claim...") 
     contract.methods.claim().send({from: account}, (err, res) => {
         console.log("Calling Claim...")
         if (err) {
