@@ -45,7 +45,7 @@ function claimBOO() {
     contract.methods.claim().send({from: account}, (err, res) => {
         console.log("Calling Claim...")
         if (err) {
-            alert("Nothing To Claim, Please wait to earn more BOO!");
+            alert("Transaction Declined!");
             return;
         }
 })
