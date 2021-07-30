@@ -39,20 +39,6 @@ window.addEventListener('load', async function() {
     }, 1000);
 })
 
-
-function claimBOO() {
-    console.log("trying to claim")
-    contract.methods.claim().sendTransaction({from: account}, (err, res) => {
-        console.log("calling claim")
-        if (err) {
-            alert("Nothing To Claim, Please wait to earn more BOO!");
-            return;
-        }
-})
-
-}
-
-
 async function updateData() {
     account = accounts[0];
 
@@ -60,6 +46,18 @@ async function updateData() {
         alert("Switch to Fantom Opera Mainnet");
     }
 
+    function claimBOO() {
+        console.log("trying to claim")
+        contract.methods.claim().call({from: account}, (err, res) => {
+            console.log("calling claim")
+            if (err) {
+                alert("Nothing To Claim, Please wait to earn more BOO!");
+                return;
+            }
+    })
+    
+    }
+    
     // contract.methods.tokensToClaim(account).call({from: account}, (err, result) => {
     //     if (err) {
     //         document.getElementById('tokensToClaim').innerHTML = "0 BabyBOO"; // user account not created! so invalid opcode!
