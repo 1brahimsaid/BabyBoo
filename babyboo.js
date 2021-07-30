@@ -85,3 +85,4 @@ async function updateData() {
     if (ethereum.chainId != "0xfa") {
         alert("Switch to Fantom Opera Mainnet");
     }
+}
